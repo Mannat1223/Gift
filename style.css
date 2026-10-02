@@ -1,0 +1,1964 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fff8f4;
+    --pink: #f3d4d7;
+    --rose: #c86b75;
+    --dark: #351d22;
+    --soft: #8d676c;
+    --line: #ead0d2;
+    --white: #fffdfb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            #f7dfe1 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            #f4e2d7 0,
+            transparent 30%
+        ),
+        var(--cream);
+}
+
+.hero-content {
+    max-width: 750px;
+    padding: 30px;
+    animation: fadeUp 1.4s ease;
+}
+
+.eyebrow {
+    color: var(--rose);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 10vw, 115px);
+    line-height: .85;
+    font-weight: 500;
+    margin: 35px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--rose);
+    font-style: italic;
+}
+
+.hero-description {
+    color: var(--soft);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.main-button,
+.last-button {
+    margin-top: 35px;
+    padding: 16px 30px;
+    border-radius: 100px;
+    border: 1px solid #d9989f;
+    background: var(--dark);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: .4s;
+}
+
+.main-button:hover,
+.last-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(53,29,34,.2);
+}
+
+.tiny-text {
+    margin-top: 60px;
+    color: #a67b80;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* ================= GENERAL ================= */
+
+.garden,
+.page {
+    min-height: 100vh;
+    padding: 90px 7%;
+}
+
+.heading {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 7vw, 80px);
+    font-weight: 500;
+    line-height: .95;
+    margin: 20px 0;
+}
+
+.heading h2 span {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.heading > p:last-child {
+    color: var(--soft);
+    line-height: 1.7;
+}
+
+
+/* ================= GARDEN ================= */
+
+.bouquet-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.bouquet {
+    padding: 45px 25px;
+    min-height: 260px;
+
+    background: rgba(255,255,255,.6);
+    border: 1px solid var(--line);
+
+    text-align: center;
+    cursor: pointer;
+
+    transition: .5s;
+}
+
+.bouquet:hover {
+    transform: translateY(-9px) rotate(-1deg);
+
+    box-shadow:
+        0 25px 55px rgba(70,30,35,.12);
+}
+
+.bouquet-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.bouquet h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.bouquet p {
+    color: var(--soft);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 10px 0 25px;
+}
+
+.bouquet small {
+    color: var(--rose);
+    letter-spacing: 2px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+
+/* ================= BACK ================= */
+
+.back-button {
+    background: transparent;
+    border: none;
+    color: var(--rose);
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+
+/* ================= STORY ================= */
+
+.story-intro {
+    max-width: 650px;
+    margin: -25px auto 75px;
+    text-align: center;
+
+    padding: 35px 30px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.story-intro span {
+    display: block;
+    color: var(--rose);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.story-intro p {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--soft);
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.story-intro strong {
+    display: block;
+    margin-top: 10px;
+
+    font-family: "Dancing Script", cursive;
+    color: var(--rose);
+    font-size: 25px;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+    background: #dfb7bb;
+
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 45px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+}
+
+.timeline-heart {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    border: 1px solid var(--rose);
+
+    background: var(--cream);
+    color: var(--rose);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 25px;
+    z-index: 2;
+
+    font-size: 17px;
+}
+
+.timeline-item:nth-child(odd) {
+    text-align: right;
+}
+
+.timeline-item:nth-child(odd) .timeline-heart {
+    right: -19px;
+}
+
+.timeline-item:nth-child(even) {
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-heart {
+    left: -19px;
+}
+
+.timeline-card {
+    padding: 30px;
+
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.7);
+
+    transition: .4s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(60,30,35,.1);
+}
+
+.timeline-card small {
+    color: var(--rose);
+    letter-spacing: 3px;
+    font-size: 9px;
+}
+
+.timeline-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    margin: 10px 0 15px;
+}
+
+.timeline-card p {
+    color: var(--soft);
+    line-height: 1.75;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.story-emphasis {
+    color: var(--rose) !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px !important;
+    font-weight: 600;
+}
+
+.special-heart {
+    background: var(--rose);
+    color: white;
+    border-color: var(--rose);
+}
+
+.final-story-card {
+    border: 1px solid #dba5aa;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf7,
+            #f9e8e7
+        );
+
+    box-shadow:
+        0 20px 55px rgba(120,55,65,.12);
+}
+
+.official-date {
+    margin: 25px 0;
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.official-date span {
+    display: block;
+    color: var(--rose);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+}
+
+.official-date strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+}
+
+.story-ending {
+    font-family: "Dancing Script", cursive !important;
+    color: var(--rose) !important;
+    font-size: 27px !important;
+    line-height: 1.4 !important;
+}
+
+.story-ending-box {
+    max-width: 650px;
+    margin: 80px auto 20px;
+
+    text-align: center;
+    padding: 35px 25px;
+
+    background: rgba(255,255,255,.5);
+    border: 1px solid var(--line);
+}
+
+.story-ending-box p {
+    color: var(--soft);
+    font-family: "Dancing Script", cursive;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.story-ending-box strong {
+    color: var(--rose);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+
+/* ================= SONG ================= */
+
+.music-card {
+    max-width: 650px;
+    margin: auto;
+
+    padding: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    background: var(--dark);
+    color: white;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 60px rgba(53,29,34,.18);
+}
+
+.vinyl {
+    width: 120px;
+    height: 120px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #111 0,
+            #111 2px,
+            #242424 3px,
+            #242424 5px
+        );
+
+    animation: spin 5s linear infinite;
+}
+
+.vinyl-center {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #dc929a;
+
+    position: relative;
+
+    top: 48px;
+    left: 48px;
+}
+
+.music-info {
+    text-align: left;
+}
+
+.music-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .6;
+}
+
+.music-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.music-artist {
+    color: #dca1a7;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+}
+
+.music-caption {
+    margin-top: 15px;
+
+    color: #dcaeb3;
+
+    font-family: "Dancing Script", cursive;
+    font-size: 19px;
+}
+
+.song-player {
+    max-width: 800px;
+    margin: 55px auto 0;
+
+    padding: 18px;
+
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.55);
+}
+
+.player-top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+    padding: 0 5px;
+
+    color: var(--rose);
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.youtube-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.song-letter {
+    max-width: 680px;
+    margin: 75px auto 0;
+
+    padding: 45px 50px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.65);
+    border: 1px solid var(--line);
+
+    position: relative;
+}
+
+.song-letter::before {
+    content: "♪";
+
+    position: absolute;
+
+    top: 18px;
+    left: 25px;
+
+    color: #d9a4a9;
+    font-size: 22px;
+}
+
+.song-letter::after {
+    content: "♫";
+
+    position: absolute;
+
+    bottom: 18px;
+    right: 25px;
+
+    color: #d9a4a9;
+    font-size: 22px;
+}
+
+.song-small {
+    color: var(--rose) !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 15px !important;
+}
+
+.song-letter h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.song-letter p {
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+    line-height: 1.65;
+
+    margin-bottom: 17px;
+}
+
+.song-letter em {
+    color: var(--rose);
+}
+
+.song-highlight {
+    color: var(--rose) !important;
+
+    font-family: "Dancing Script", cursive !important;
+
+    font-size: 27px !important;
+
+    margin: 25px 0 !important;
+}
+
+.song-final {
+    color: var(--rose) !important;
+
+    font-family: "Dancing Script", cursive !important;
+
+    font-size: 32px !important;
+
+    margin-top: 30px !important;
+}
+
+.song-memory {
+    max-width: 600px;
+    margin: 55px auto 0;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.song-memory span {
+    color: var(--rose);
+    font-size: 25px;
+}
+
+.song-memory p {
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    margin: 12px 0 8px;
+}
+
+.song-memory strong {
+    color: var(--rose);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 24px;
+}
+
+.song-bottom {
+    text-align: center;
+    margin-top: 50px;
+
+    color: var(--soft);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.song-bottom p:nth-child(2) {
+    color: var(--rose);
+    font-size: 28px;
+}
+
+
+/* ================= LETTER ================= */
+
+.letter-stage {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.envelope-container {
+    width: 520px;
+    max-width: 90vw;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.cute-envelope {
+    width: 500px;
+    max-width: 90vw;
+    height: 320px;
+
+    position: relative;
+
+    margin: auto;
+
+    filter:
+        drop-shadow(
+            0 25px 30px rgba(70,30,35,.13)
+        );
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+
+    background: #e6c5b7;
+    border-radius: 3px;
+
+    z-index: 2;
+}
+
+.inside-letter {
+    position: absolute;
+
+    width: 88%;
+    height: 285px;
+
+    left: 6%;
+    top: 15px;
+
+    background: #fffdf8;
+
+    z-index: 1;
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+
+    box-shadow:
+        0 5px 20px rgba(60,30,30,.08);
+
+    overflow: hidden;
+}
+
+.paper-content {
+    padding: 28px 32px;
+    text-align: left;
+}
+
+.paper-small {
+    font-size: 9px !important;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #c98a8f;
+
+    margin-bottom: 15px !important;
+}
+
+.paper-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    font-weight: 600;
+}
+
+.paper-content p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+    line-height: 1.55;
+
+    color: #62484c;
+
+    margin-bottom: 14px;
+}
+
+.paper-highlight {
+    font-family: "Dancing Script", cursive !important;
+
+    color: #c86b75 !important;
+
+    font-size: 23px !important;
+    line-height: 1.5 !important;
+
+    text-align: center;
+
+    margin: 22px 0 !important;
+}
+
+.big-love {
+    font-size: 31px !important;
+    font-weight: 700;
+}
+
+.paper-signature {
+    text-align: right;
+
+    font-family: "Dancing Script", cursive !important;
+
+    color: #c86b75 !important;
+
+    font-size: 28px !important;
+
+    margin-top: 30px !important;
+}
+
+.envelope-top {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 65%;
+
+    background: #d8b4a5;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    z-index: 5;
+
+    transform-origin: top center;
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.ribbon {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+}
+
+.ribbon:hover {
+    transform: scale(1.03);
+}
+
+.ribbon-band {
+    position: absolute;
+
+    width: 34px;
+    height: 100%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #c87882;
+}
+
+.ribbon-bow {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 105px;
+    height: 65px;
+
+    transform: translate(-50%, -50%);
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+
+    width: 48px;
+    height: 38px;
+
+    top: 10px;
+
+    background: #c87882;
+
+    border-radius:
+        60% 20% 60% 20%;
+}
+
+.bow-left {
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.bow-right {
+    right: 0;
+    transform: rotate(-25deg);
+}
+
+.bow-knot {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: #b96570;
+
+    border-radius: 50%;
+
+    left: 40px;
+    top: 17px;
+
+    z-index: 3;
+}
+
+.drag-text {
+    margin-top: 28px;
+
+    color: #c16f78;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.drag-line {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    color: #d59ba0;
+}
+
+.drag-line div {
+    width: 100px;
+    height: 1px;
+
+    background: #e4bfc2;
+}
+
+.envelope-container.open .ribbon {
+    transform:
+        translateX(180px)
+        rotate(8deg);
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.envelope-container.open .envelope-top {
+    transform: rotateX(180deg);
+}
+
+.envelope-container.open .inside-letter {
+    transform: translateY(-170px);
+    z-index: 7;
+}
+
+.envelope-container.open .drag-text,
+.envelope-container.open .drag-line {
+    opacity: 0;
+}
+
+.envelope-container.letter-only .envelope-body,
+.envelope-container.letter-only .envelope-top,
+.envelope-container.letter-only .ribbon {
+    animation:
+        envelopePartsDisappear .8s ease forwards;
+}
+
+.envelope-container.letter-only .inside-letter {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(650px, 88vw);
+
+    min-height: 500px;
+    height: auto;
+    max-height: 82vh;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    z-index: 1000;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 30px 80px rgba(50,20,25,.18);
+
+    overflow-y: auto;
+
+    animation:
+        letterComeOut
+        1s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+@keyframes envelopePartsDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            scale(.8)
+            translateY(25px);
+        pointer-events: none;
+    }
+}
+
+@keyframes letterComeOut {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -25%)
+            scale(.75) !important;
+    }
+
+    60% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -52%)
+            scale(1.03) !important;
+    }
+
+    100% {
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1) !important;
+    }
+}
+
+.envelope-container.letter-only .paper-content {
+    padding: 50px 55px;
+}
+
+.envelope-container.letter-only .paper-content h3 {
+    font-size: 34px;
+}
+
+.envelope-container.letter-only .paper-content p {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+.envelope-container.letter-only .paper-highlight {
+    font-size: 25px !important;
+}
+
+.envelope-container.letter-only .big-love {
+    font-size: 34px !important;
+}
+
+.envelope-container.letter-only .paper-signature {
+    font-size: 30px !important;
+}
+
+
+/* ================= MEMORY CARDS ================= */
+
+.memory-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+
+    perspective: 1200px;
+}
+
+.memory-card {
+    height: 280px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.memory-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-front,
+.memory-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border: 1px solid var(--line);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.memory-front {
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfb,
+            #fdf0ed
+        );
+}
+
+.memory-back {
+    transform: rotateY(180deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8e4e4,
+            #fffaf6
+        );
+}
+
+.card-number {
+    position: absolute;
+
+    top: 17px;
+    left: 20px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #c99499;
+}
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    border: 1px solid #dcaeb2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    color: var(--rose);
+
+    margin-bottom: 22px;
+}
+
+.card-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    color: var(--dark);
+
+    font-weight: 600;
+}
+
+.memory-front span {
+    margin-top: 15px;
+
+    font-family: "Dancing Script", cursive;
+
+    color: var(--rose);
+
+    font-size: 18px;
+}
+
+.memory-back p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    line-height: 1.35;
+}
+
+.memory-back small {
+    margin-top: 20px;
+
+    color: var(--rose);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 17px;
+}
+
+
+/* ================= ARU FACTS ================= */
+
+.aru-facts {
+    max-width: 800px;
+
+    margin: 70px auto 0;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.facts-small {
+    color: var(--rose);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.facts-list {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.facts-list span {
+    padding: 10px 16px;
+
+    border: 1px solid var(--line);
+
+    background: rgba(255,255,255,.5);
+
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 16px;
+}
+
+
+/* ================= DISTANCE ================= */
+
+.distance-map {
+    max-width: 900px;
+
+    margin: 100px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.place {
+    width: 220px;
+    text-align: center;
+}
+
+.location-heart {
+    width: 75px;
+    height: 75px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--rose);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    color: var(--rose);
+}
+
+.place h3 {
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+.place p {
+    color: var(--soft);
+    font-size: 12px;
+}
+
+.distance-line {
+    width: 250px;
+    height: 1px;
+
+    background: #d9aeb3;
+
+    position: relative;
+}
+
+.moving-heart {
+    position: absolute;
+
+    top: -12px;
+
+    font-size: 22px;
+
+    color: var(--rose);
+
+    animation:
+        travel 3s ease-in-out infinite;
+}
+
+.distance-message {
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    line-height: 1.5;
+}
+
+.distance-message strong {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.distance-notes {
+    max-width: 750px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.distance-notes div {
+    text-align: center;
+
+    padding: 20px;
+
+    border: 1px solid var(--line);
+
+    font-size: 25px;
+}
+
+.distance-notes span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    color: var(--soft);
+}
+
+.sleep-call {
+    max-width: 650px;
+
+    margin: 60px auto 0;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    background: rgba(255,255,255,.55);
+
+    border: 1px solid var(--line);
+}
+
+.sleep-call p {
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+}
+
+.sleep-call strong {
+    display: block;
+
+    margin: 10px 0;
+
+    color: var(--rose);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 27px;
+}
+
+.sleep-call span {
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+}
+
+
+/* ================= FUTURE ================= */
+
+.future-list {
+    max-width: 750px;
+    margin: auto;
+}
+
+.future-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.future-item span {
+    color: var(--rose);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+}
+
+.future-item p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+.home-dream {
+    max-width: 700px;
+
+    margin: 75px auto 0;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfb,
+            #f8e8e7
+        );
+
+    border: 1px solid var(--line);
+}
+
+.home-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.home-small {
+    color: var(--rose);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.home-dream h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    margin: 15px 0;
+}
+
+.home-dream > p {
+    color: var(--soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.home-dream strong {
+    display: block;
+
+    margin-top: 20px;
+
+    color: var(--rose);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 26px;
+}
+
+.future-message {
+    text-align: center;
+
+    margin-top: 60px;
+
+    color: var(--soft);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 25px;
+}
+
+.future-message strong {
+    display: block;
+
+    color: var(--rose);
+
+    font-size: 30px;
+}
+
+.last-button {
+    display: block;
+
+    margin: 45px auto 0;
+}
+
+
+/* ================= FINAL ================= */
+
+.final {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #62333b,
+            #241317
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+.final-content {
+    max-width: 700px;
+
+    animation: fadeUp 1.5s ease;
+}
+
+.final h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 9vw, 100px);
+
+    font-weight: 500;
+
+    line-height: .9;
+
+    margin: 30px 0;
+}
+
+.final h1 span {
+    display: block;
+
+    color: #e9aeb4;
+
+    font-style: italic;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    color: #e9aeb4;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.final-text {
+    color: #e8ced1;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+.final-highlight {
+    font-family: "Dancing Script", cursive;
+
+    color: #efb5bb;
+
+    font-size: 35px;
+
+    margin: 35px 0;
+}
+
+.final-love {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 40px;
+
+    color: #f0b8bd;
+
+    margin-top: 40px;
+}
+
+.boyfriend-day {
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #f1c3c7;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@keyframes travel {
+
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 50%;
+    }
+
+    100% {
+        left: 95%;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px) {
+
+    .garden,
+    .page {
+        padding: 65px 20px;
+    }
+
+    .bouquet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding-left: 55px;
+        padding-right: 5px;
+
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-heart,
+    .timeline-item:nth-child(even) .timeline-heart {
+
+        left: -2px;
+        right: auto;
+    }
+
+    .timeline-card {
+        padding: 24px;
+    }
+
+    .timeline-card h3 {
+        font-size: 27px;
+    }
+
+    .timeline-card p {
+        font-size: 13px;
+    }
+
+    .music-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+    .music-info {
+        text-align: center;
+    }
+
+    .song-player {
+        padding: 10px;
+    }
+
+    .player-top {
+        font-size: 8px;
+    }
+
+    .song-letter {
+        padding: 35px 23px;
+    }
+
+    .song-letter h3 {
+        font-size: 29px;
+    }
+
+    .song-letter p {
+        font-size: 16px;
+    }
+
+    .song-highlight {
+        font-size: 24px !important;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .memory-card {
+        height: 260px;
+    }
+
+    .distance-map {
+
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .distance-line {
+
+        width: 2px;
+        height: 100px;
+    }
+
+    .moving-heart {
+
+        animation: travelVertical 3s ease-in-out infinite;
+    }
+
+    .distance-notes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .future-item p {
+        font-size: 21px;
+    }
+
+    .home-dream {
+        padding: 35px 22px;
+    }
+
+    .home-dream h3 {
+        font-size: 34px;
+    }
+
+    .cute-envelope {
+        height: 260px;
+    }
+
+    .inside-letter {
+        height: 235px;
+    }
+
+    .paper-content {
+        padding: 20px;
+    }
+
+    .paper-content p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .paper-content h3 {
+        font-size: 20px;
+    }
+
+    .ribbon-band {
+        width: 28px;
+    }
+
+    .ribbon-bow {
+        transform:
+            translate(-50%, -50%)
+            scale(.8);
+    }
+
+    .envelope-container.letter-only .inside-letter {
+
+        width: 88vw;
+
+        min-height: 450px;
+
+        max-height: 78vh;
+    }
+
+    .envelope-container.letter-only .paper-content {
+        padding: 32px 25px;
+    }
+
+    .envelope-container.letter-only .paper-content h3 {
+        font-size: 26px;
+    }
+
+    .envelope-container.letter-only .paper-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .envelope-container.letter-only .paper-highlight {
+        font-size: 22px !important;
+    }
+
+    .envelope-container.letter-only .big-love {
+        font-size: 28px !important;
+    }
+
+    .facts-list {
+        gap: 8px;
+    }
+
+    .facts-list span {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@keyframes travelVertical {
+
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 50%;
+    }
+
+    100% {
+        top: 95%;
+    }
+}
